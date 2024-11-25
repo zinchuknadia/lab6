@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         while(true) {
-            MainMenu.setMenu();
+            MainMenu mainMenu = new MainMenu();
             Scanner sc = new Scanner(System.in);
             String command = sc.nextLine();
-            MainMenu.executeCommand(command);
+            mainMenu.executeCommand(command);
         }
     }
 }
