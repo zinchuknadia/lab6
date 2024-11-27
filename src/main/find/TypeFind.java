@@ -6,29 +6,29 @@ import main.Toy;
 
 import java.util.*;
 
-public class SizeFind implements FindMenuItem{
+public class TypeFind implements FindMenuItem{
     List<Toy> toyList = new ArrayList<>(PlayRoom.getPlayRoom().getToyList());
 
     public Set<String> formMenu(){
-        Set<String> sizes = new HashSet<>();
+        Set<String> types = new HashSet<>();
         for (Toy toy : toyList) {
-            sizes.add(toy.getSize());
+            types.add(toy.getType());
         }
-        return sizes;
+        return types;
     }
 
     @Override
     public void execute() {
-        Set<String> sizes = formMenu();
-        String size = OutPut.getParameterSpecification(sizes);
+        Set<String> types = formMenu();
+        String type = OutPut.getParameterSpecification(types);
         List<Toy> foundToyList = new ArrayList<>();
         for(Toy toy : toyList){
-            if(toy.getSize().equals(size)){
+            if(toy.getType().equals(type)){
                 foundToyList.add(toy);
             }
         }
         System.out.println("Found toys: ");
         OutPut.outputList(foundToyList);
-        System.out.println("Size category toys were found");
+        System.out.println("Type category toys were found");
     }
 }

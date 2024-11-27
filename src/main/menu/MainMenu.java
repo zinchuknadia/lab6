@@ -11,7 +11,10 @@ public class MainMenu extends Menu {
         menu.put("sort",new SortItem());
         menu.put("find",new FindItem());
         menu.put("delete",new DeleteItem());
-        menu.put("start",new StartItem());
+        menu.put("show",new ShowItem());
         menu.put("exit",new ExitItem());
+        menu.put("read file",new FileReadItem());
+        menu.put("show budget",new ShowBudgetItem());
+        menu.put("increase budget",new IncreaseBudgetItem());
     }
 }

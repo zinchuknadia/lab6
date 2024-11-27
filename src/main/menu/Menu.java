@@ -1,6 +1,8 @@
 package main.menu;
 
 
+import main.OutPut;
+
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -13,6 +15,9 @@ public class Menu implements MenuItem {
         this.menu = menu;
     }
 
+    public Map<String, MenuItem> getMenu() {
+        return menu;
+    }
 
     public void executeCommand(String command){
         menu.getOrDefault(command,()->{
@@ -27,6 +32,7 @@ public class Menu implements MenuItem {
 
     @Override
     public void execute() {
+        OutPut.parameterMenu(menu);
         Scanner sc = new Scanner(System.in);
         String command = sc.nextLine();
         executeCommand(command);
